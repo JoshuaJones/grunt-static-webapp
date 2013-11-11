@@ -1,0 +1,25 @@
+//
+//  {%= name %}
+//  {%= homepage %}
+//  v{%= version %}
+//
+
+// Compass
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/utilities";
+
+// Plugins
+// @import "susy";
+
+// SASS
+@import "variables";
+@import "mixins";
+
+// Template
+@import "layout";
+@import "typography";
+@import "global";
+
+// Pages
+@import "pages/front";

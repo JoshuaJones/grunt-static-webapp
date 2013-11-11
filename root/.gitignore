@@ -1,0 +1,21 @@
+### Sass ###
+.sass-cache
+
+### Dependencies Management ###
+node_modules
+app/bower_components
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/

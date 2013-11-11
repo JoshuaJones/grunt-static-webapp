@@ -1,0 +1,58 @@
+// Mixins
+
+// Retina Images - make sure to suffix retina images with _2x
+@mixin retinaBackground($file, $width, $height, $type: png) {
+  background-image: url($file + '.' + $type);
+
+  @media (-webkit-min-device-pixel-ratio: 1.5), (-moz-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    & {
+      background-image: url($file + '_2x.' + $type);
+      @include background-size($width $height);
+    }
+  }
+}
+
+// Responsive Font sizes. `body` must be set to 100%
+@mixin rem($font-size, $base-size: 100) {
+  font-size: $font-size + px;
+  font-size: ($font-size / $base-size * 100 / 16) + rem;
+}
+
+// Quick Height and Width setting
+@mixin size($width, $height) {
+  height: $height;
+  width: $width;
+}
+
+// SpriteElements
+@mixin spriteElement($width, $height, $pos) {
+  background-position: $pos;
+  height: $height;
+  width: $width;
+}
+
+// CSS Triangles
+@mixin triangle ($direction, $color, $height, $width) {
+  width: 0;
+  height: 0;
+  @if $direction == 'bottom' {
+    border-top: $height solid $color;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+  }
+  @if $direction == 'left' {
+    border-top: $height solid transparent;
+    border-bottom: $height solid transparent;
+    border-right: $width solid $color;
+  }
+  @if $direction == 'right' {
+    border-top: $height solid transparent;
+    border-bottom: $height solid transparent;
+    border-left: $width solid $color;
+  }
+  @if $direction == 'top' {
+    border-bottom: $height solid $color;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+  }
+}
