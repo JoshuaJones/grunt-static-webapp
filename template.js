@@ -76,6 +76,7 @@ exports.template = function (grunt, init, done) {
     if (props.usemin) {
       props.devDependencies['grunt-contrib-concat'] = '~0.1.3';
       props.devDependencies['grunt-usemin'] = '~0.1.10';
+      props.devDependencies['grunt-contrib-requirejs'] = '~0.4.1';
     }
 
     if (props.compress) {

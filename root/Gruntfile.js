@@ -78,6 +78,17 @@ module.exports = function (grunt) {
         }]
       }
     },{% if (usemin) { %}
+    requirejs: {
+      dist: {
+        options: {
+          baseUrl: projectConfig.dev + '/js',
+          optimize: 'none',
+          preserveLicenseComments: false,
+          useStrict: true,
+          wrap: true
+        }
+      }
+    },
     // usemin Setup
     useminPrepare: {
       options: {
