@@ -185,6 +185,7 @@ module.exports = function (grunt) {
     'clean:dist',{% if (usemin) { %}
     'useminPrepare',{% } %}
     'concurrent:dist',{% if (usemin) { %}
+    'requirejs',
     'concat',{% } %}
     'uglify',
     'cssmin',{% if (usemin) { %}
