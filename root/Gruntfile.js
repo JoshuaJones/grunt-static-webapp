@@ -79,13 +79,12 @@ module.exports = function (grunt) {
       }
     },{% if (usemin) { %}
     requirejs: {
-      dist: {
+      compile: {
         options: {
-          baseUrl: projectConfig.dev + '/js',
-          optimize: 'none',
-          preserveLicenseComments: false,
-          useStrict: true,
-          wrap: true
+          baseUrl: '<%= project.dev %>/js',
+          mainConfigFile: '<%= project.dev %>/js/config.js',
+          out: '<%= project.dist %>/js/main.js',
+          name: 'config'
         }
       }
     },
