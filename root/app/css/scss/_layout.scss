@@ -1,4 +1,5 @@
-// Normalize & Layout
+// Normalize / Layout
+// --------------------------------------------------
 article, aside, details, figcaption, figure, footer,
 header, hgroup, nav, section, summary { display: block; }
 audio, canvas, video {
@@ -99,9 +100,15 @@ td { vertical-align: top; }
 .chromeframe { background: #ccc; color: #000; margin: 0.2em 0; padding: 0.2em 0; }
 
 // Structure
-// Susy Structure
-// $base-font-size: 15px;
-// $total-columns: 12;
-// $column-width: 60px;
-// $gutter-width: 10px;
-// $grid-padding: 10px;
+// --------------------------------------------------
+// $susy: (
+//   columns: 12,
+//   container: 1140px,
+//   debug: (
+//     image: show-columns,
+//     color: rgba(green, 0.25),
+//     output: overlay,
+//     toggle: top right,
+//   ),
+// );
+

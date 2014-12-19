@@ -1,58 +1,53 @@
-// Type
+// Typography Variables & Mixins
+// --------------------------------------------------
 
-// Headings
+// Fonts
+// --------------------------
+$font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-serif: Georgia, "Times New Roman", Times, serif;
+$font-mono: Monaco, Menlo, Consolas, "Courier New", monospace;
+$font-default: $font-sans;
+$font-headings: sans-serif;
+$font-icons: "icons";
+
+// Font Family Mixins
+// (N = normal | I = italic | 4 = normal font-weight | 7 = bold font-weight)
+// --------------------------
+@mixin font-sansN4() {
+  font-family: $font-sans;
+  font-weight: 400;
+}
+
+// Defaults
 // --------------------------
 h1, h2, h3, h4, h5, h6 {
   color: inherit;
-  font-family: $headingsFontFamily;
-  font-weight: $headingsFontWeight;
   line-height: 1;
-  margin: ($baseLineHeight / 2) 0;
   text-rendering: optimizelegibility;
-  small {
-    color: $grayLight;
-    font-weight: normal;
-    line-height: 1;
-  }
 }
 h1, h2, h3 { line-height: 40px; }
 h4, h5, h6 { line-height: 20px; }
-h1 {
-  font-size: 36px;
-  small { font-size: 24px; }
-}
-h2 {
-  font-size: 30px;
-  small { font-size: 18px; }
-}
-h3 {
-  font-size: 24px;
-  small { font-size: 14px; }
-}
-h4 {
-  font-size: 18px;
-  small { font-size: 14px; }
-}
-h5 { font-size: 14px; }
-h6 { font-size: 12px; }
+h1 { @include rem('size', 36) }
+h2 { @include rem('size', 30) }
+h3 { @include rem('size', 24) }
+h4 { @include rem('size', 18) }
+h5 { @include rem('size', 14) }
+h6 { @include rem('size', 12) }
 
 // Links
 // --------------------------
-
 a, a:visited {
-  color: $defaultLinkColor;
+  color: $color-defaultLink;
   @include transition(color 0.25s ease);
 }
-
 a:hover {
-  color: darken($defaultLinkColor, 15%);
+  color: darken($color-defaultLink, 15%);
 }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 
 // Lists
 // --------------------------
-
 ul, ol {
   margin: 1em 0;
   padding: 0 0 0 40px;
@@ -77,7 +72,6 @@ nav ul, nav ol {
 
 // Misc
 // --------------------------
-
 abbr[title] { border-bottom: 1px dotted; }
 b, strong { font-weight: bold; }
 
@@ -134,7 +128,3 @@ sub, sup {
 }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
-
-.cf:before, .cf:after { content:""; display: block; overflow: hidden; }
-.cf:after { clear: both; }
-.cf { zoom: 1; }
