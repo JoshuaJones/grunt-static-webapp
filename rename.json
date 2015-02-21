@@ -1,0 +1,6 @@
+{
+  "app/js/config.js": "{% if (usemin) { %}app/js/config.js{% } %}",
+  "app/js/main-usemin.js": "{% if (usemin) { %}app/js/main.js{% } %}",
+  "app/js/main-default.js": "{% if (!usemin) { %}app/js/main.js{% } %}",
+  "app/js/plugins.js": "{% if (!usemin) { %}app/js/plugins.js{% } %}"
+}
